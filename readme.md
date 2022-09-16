@@ -1,3 +1,3 @@
-![](Image.PNG)
+![](Image.png)
 
 # Test
