@@ -17,8 +17,8 @@ In this data science project I walked through the process of building a real est
 1. Create EC2 instance using amazon console and in secutity group allow HTTP/HTTPS incoming traffic.
 2. Now connect to your instance using PuTTY windows application.
 3. Become the root user to avoid permission errors with the command-
-'''
+```
 sudo su
-'''
+```
 4. 
 
