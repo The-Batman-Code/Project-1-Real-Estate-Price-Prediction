@@ -89,4 +89,41 @@ sudo service nginx restart
 ```
 20. Reload the instance link in the browser and see the magic❤️. Congratulations😍😊.
 
-# Error handling-
+# Error handling
+Here we will troubleshoot the errors I faced during the making of this project😁
+
+## Error 1 (403 forbidden error)-
+1. Open the WinSCP application and navigate to /usr/share/nginx/html and copy the path.
+2. Now check the permission of the copied path using the command-
+```
+namei -om /usr/share/nginx/html
+```
+3. Check the permissions carefully. We want the same permissions for our project(BHP) folder.
+4. Change the permission of the ubuntu/user folder using the following command-
+```
+chmod 755 /home/ubuntu
+```
+5. To verify the change in permissions enter the following command and cross-check with the permissions in step 2-
+```
+namei -om /home/ubuntu/BHP
+```
+6. Now restart the nginx server using the command-
+```
+sudo service nginx restart
+```
+7. Refresh the browser and the app.html file should load. Congratulations😊
+Reference-[](https://www.youtube.com/watch?v=CtRSx3EvBIY&list=WL&index=26)
+
+## Error 2 (Could not find path)-
+1. This error may be because we created util.py using windows path syntax not linux.
+2. Navigate to the /home/ubuntu/ path and enter the following command to edit the util.py file-
+```
+sudo nano BHP/server/util.py
+```
+3. Now wherever you see mention of path replace all '\\' with '/' and save the file.
+4. Navigate to the /home/ubuntu path and enter the following command to start the flask server-
+```
+python3 BHP/server/server.py
+```
+
+You seem interested in machine learning😉. Thank you for reading till here. Cheers!!!🍻
