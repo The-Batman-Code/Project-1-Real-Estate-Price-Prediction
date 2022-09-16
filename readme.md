@@ -20,5 +20,73 @@ In this data science project I walked through the process of building a real est
 ```
 sudo su
 ```
-4. 
+4. Update the linux instance and install nginx using using the commands-
+```
+sudo apt-get update
+sudo apt-get install nginx
+```
+5. We can check whether the nginx server is running by loading the url of the instance in the browser.
+6. Now login to your instance and transfer the application folder (download this repo, extract it and rename the folder as BHP, this folder is now your application folder😊) into the EC2 instance using WinSCP application.
+7. Navigate to the location using the command-
+```
+cd /etc/nginx/sites-enabled
+```
+8. Unlink the deafult file using the command-
+```
+sudo unlink default
+```
+9. Navigate to the location using the command-
+```
+cd /etc/nginx/sites-available
+```
+10. Now create the file named bhp.conf using the command-
+```
+sudo vim bhp.conf
+```
+11. Enter the following data in bhp.conf file-
+```
+server {
+    listen 80;
+        server_name bhp;
+        root /home/ubuntu/BHP/client;
+        index app.html;
+        location /api/ {
+             rewrite ^/api(.*) $1 break;
+             proxy_pass http://127.0.0.1:5000;
+        }
+}
+```
+12. Now navigate to the following location using the command-
+```
+cd /etc/nginx/sites-enabled
+```
+13. Create the following symlink using the command-
+```
+sudo ln -v -s /etc/nginx/sites-available/bhp.conf
+```
+14. Now restart the nginx server using the command-
+```
+sudo service nginx restart
+```
+15. Reload the instance link in the browser, you should see your app.html load in the browser😊
+16. For flask server to run install python using the command-
+```
+sudo apt-get install python3-pip
+```
+17. Now we need the necessary python libraries, so run the following commands one by one-
+```
+sudo pip3 install Flask
+sudo pip3 install numpy
+sudo pip3 install scikit-learn
+```
+18. Naviagte to the location - /home/ubuntu/BHP/server and run the following commmand-
+```
+python3 server.py
+```
+19. Restart the nginx server using the following command-
+```
+sudo service nginx restart
+```
+20. Reload the instance link in the browser and see the magic❤️. Congratulations😍😊.
 
+# Error handling-
