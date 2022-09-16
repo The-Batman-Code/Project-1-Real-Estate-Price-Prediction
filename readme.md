@@ -112,7 +112,8 @@ namei -om /home/ubuntu/BHP
 sudo service nginx restart
 ```
 7. Refresh the browser and the app.html file should load. Congratulations😊
-Reference-[](https://www.youtube.com/watch?v=CtRSx3EvBIY&list=WL&index=26)
+
+Reference-[](https://www.youtube.com/watch?v=CtRSx3EvBIY&list=WL&index=26/)
 
 ## Error 2 (Could not find path)-
 1. This error may be because we created util.py using windows path syntax not linux.
