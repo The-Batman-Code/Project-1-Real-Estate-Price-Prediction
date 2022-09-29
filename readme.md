@@ -126,5 +126,5 @@ sudo nano BHP/server/util.py
 ```
 python3 BHP/server/server.py
 ```
-
+This project can be deployed on GCP similarly using VM instance in GCP👍 
 You seem interested in machine learning😉. Thank you for reading till here. Cheers!!!🍻
