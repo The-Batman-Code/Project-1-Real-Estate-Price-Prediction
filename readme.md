@@ -121,7 +121,7 @@ sudo service nginx restart
 ```
 sudo nano BHP/server/util.py
 ```
-3. Now wherever you see mention of path replace all '\\\' with '/' and save the file.
+3. Now wherever you see mention of path replace all \\ with '/' and save the file.
 4. Navigate to the /home/ubuntu path and enter the following command to start the flask server-
 ```
 python3 BHP/server/server.py
